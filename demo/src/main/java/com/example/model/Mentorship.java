@@ -11,7 +11,7 @@ public class Mentorship {
         this.title = title;
         this.description = description;
         this.date = date;
-        this.xp = 20.0; // Exemplo: valor fixo de XP para mentorias
+        this.xp = 20.0; // valor fixo de XP para mentorias
     }
 
     //getters e setters
