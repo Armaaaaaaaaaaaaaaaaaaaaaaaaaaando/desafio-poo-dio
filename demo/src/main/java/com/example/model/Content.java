@@ -1,17 +1,19 @@
 package com.example.model;
 
+import java.time.LocalDate;
+
 public abstract class Content {
     private String title;
     private String description;
-    private String date; // Data de criação do conteúdo
+    private LocalDate date; // Data de criação do conteúdo
 
-    public Content(String title, String description, String date) {
+    public Content(String title, String description, LocalDate date) {
         this.title = title;
         this.description = description;
         this.date = date;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -31,7 +33,7 @@ public abstract class Content {
         this.description = description;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

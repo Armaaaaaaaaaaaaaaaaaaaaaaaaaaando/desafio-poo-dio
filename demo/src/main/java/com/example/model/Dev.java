@@ -33,7 +33,17 @@ public class Dev {
     }
 
     public double getTotalXp() {
-        return totalXp;
+        double xp = 0;
+        for (Activity content : getCompletedContent().values()){
+            xp += content.getXp();
+        }
+
+        for (Mentorship mentorship : getCompletedMentorship().values()){
+            xp += mentorship.getXp();
+        }
+
+        setTotalXp(xp);
+        return this.totalXp;
     }
 
     private void setTotalXp(Double xp){
@@ -75,20 +85,6 @@ public class Dev {
         return this.completedMentorships;
     }
 
-
-    public Double getTotalXPAll(){
-        double xp = 0;
-        for (Activity content : getCompletedContent().values()){
-            xp += content.getXp();
-        }
-
-        for (Mentorship mentorship : getCompletedMentorship().values()){
-            xp += mentorship.getXp();
-        }
-
-        setTotalXp(xp);
-        return getTotalXp();
-    }
 
 
     public void progress() {

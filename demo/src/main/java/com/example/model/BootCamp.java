@@ -1,19 +1,20 @@
 package com.example.model;
-import java.sql.Date;
+
+import java.time.LocalDate;
 import java.util.HashMap;
 
 public class BootCamp {
     // Data de início do bootcamp
-    private Date startDate;
+    private LocalDate startLocalDate;
     // Data de término do bootcamp
-    private Date endDate;
+    private LocalDate endLocalDate;
     // Nome do bootcamp
     private String name;
     // Descrição do bootcamp
     private String description;
 
     // HashMap para armazenar alunos (Dev) com ID como chave
-    private HashMap<Integer,Dev> listaAlunos = new HashMap<>() ;
+    private HashMap<Integer,Dev> listaAlunos = new HashMap<>();
     // HashMap para armazenar conteúdos com título como chave
     private HashMap<String,Activity> listaConteudos = new HashMap<>();
     // HashMap para armazenar mentorias com título como chave
@@ -22,28 +23,28 @@ public class BootCamp {
     /**
      * Construtor do BootCamp
      */
-    public BootCamp(Date startDate, Date endDate, String name, String description) {
-        this.startDate = startDate;
-        this.endDate = endDate;
+    public BootCamp(LocalDate startLocalDate, LocalDate endLocalDate, String name, String description) {
+        this.startLocalDate = startLocalDate;
+        this.endLocalDate = endLocalDate;
         this.name = name;
         this.description = description;
     }
 
     // Getters e setters
-    public Date getStartDate() {
-        return startDate;
+    public LocalDate getStartLocalDate() {
+        return startLocalDate;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setStartLocalDate(LocalDate startLocalDate) {
+        this.startLocalDate = startLocalDate;
     }
 
-    public Date getEndDate() {
-        return endDate;
+    public LocalDate getEndLocalDate() {
+        return endLocalDate;
     }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public void setEndLocalDate(LocalDate endLocalDate) {
+        this.endLocalDate = endLocalDate;
     }
 
     public String getName() {
