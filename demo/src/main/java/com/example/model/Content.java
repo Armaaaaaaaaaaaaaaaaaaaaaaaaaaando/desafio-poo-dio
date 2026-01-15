@@ -1,16 +1,18 @@
 package com.example.model;
 
-public class Content {
+public abstract class Content {
     private String title;
     private String description;
-    private int workload; // carga horária em horas
-    private double xp; // experiência oferecida
+    private String date; // Data de criação do conteúdo
 
-    public Content(String title, String description, int workload) {
+    public Content(String title, String description, String date) {
         this.title = title;
         this.description = description;
-        this.workload = workload;
-        this.xp = workload * 10.0; // Exemplo: 10 XP por hora de carga horária
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public String getTitle() {
@@ -21,20 +23,16 @@ public class Content {
         return description;
     }
 
-    public int getWorkload() {
-        return workload;
-    }
-
-    public double getXp() {
-        return xp;
-    }
-
     public void setTitle(String title) {
         this.title = title;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
 

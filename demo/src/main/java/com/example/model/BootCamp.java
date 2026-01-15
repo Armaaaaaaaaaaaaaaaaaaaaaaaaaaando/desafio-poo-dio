@@ -1,7 +1,6 @@
 package com.example.model;
 import java.sql.Date;
 import java.util.HashMap;
-import java.util.List;
 
 public class BootCamp {
     // Data de início do bootcamp
@@ -16,7 +15,7 @@ public class BootCamp {
     // HashMap para armazenar alunos (Dev) com ID como chave
     private HashMap<Integer,Dev> listaAlunos = new HashMap<>() ;
     // HashMap para armazenar conteúdos com título como chave
-    private HashMap<String,Content> listaConteudos = new HashMap<>();
+    private HashMap<String,Activity> listaConteudos = new HashMap<>();
     // HashMap para armazenar mentorias com título como chave
     private HashMap<String,Mentorship> listaMentorias = new HashMap<>();
 
@@ -59,18 +58,18 @@ public class BootCamp {
         return listaAlunos;
     }
 
-    public HashMap<String, Content> getListaConteudos() {
+    public HashMap<String, Activity> getListaConteudos() {
         return listaConteudos;
     }
 
     public HashMap<String, Mentorship> getListaMentorias() {
         return listaMentorias;
     }
-    
+
 
     //operdores de inserção e remoção
-    public void addContent(Content content) {
-        listaConteudos.put(content.getTitle(), content);
+    public void addatividade(Activity atividade) {
+        listaConteudos.put(atividade.getTitle(), atividade);
     }
 
     public void addMentorship(Mentorship mentorship) {
@@ -85,8 +84,8 @@ public class BootCamp {
         listaAlunos.remove(dev.getId());
     }
 
-    public void removeContent(Content content) {
-        listaConteudos.remove(content.getTitle());
+    public void removeatividade(Activity atividade) {
+        listaConteudos.remove(atividade.getTitle());
     }
 
     public void removeMentorship(Mentorship mentorship) {

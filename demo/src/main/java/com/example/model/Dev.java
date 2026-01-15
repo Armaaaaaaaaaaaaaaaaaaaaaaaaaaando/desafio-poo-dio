@@ -10,8 +10,8 @@ public class Dev {
     private int id;
     private double totalXp;
 
-    private Map<String,Content> enrolledContents = new LinkedHashMap<>();
-    private Map<String,Content> completedContents = new LinkedHashMap<>();
+    private Map<String,Activity> enrolledContents = new LinkedHashMap<>();
+    private Map<String,Activity> completedContents = new LinkedHashMap<>();
 
     private Map<String,Mentorship> enrolledMentorships = new LinkedHashMap<>();
     private Map<String,Mentorship> completedMentorships = new LinkedHashMap<>();
@@ -47,7 +47,7 @@ public class Dev {
 
     public void inscreverBootCamp(BootCamp bootCamp) {
         // Inscreve o Dev em todos os conteúdos do BootCamp
-        for (Content content : bootCamp.getListaConteudos().values()) {
+        for (Activity content : bootCamp.getListaConteudos().values()) {
             enrolledContents.put(content.getTitle(), content);
         }
         // Inscreve o Dev em todas as mentorias do BootCamp
@@ -59,11 +59,11 @@ public class Dev {
     }
 
 
-    public Map<String, Content> getContentEnrolled(){
+    public Map<String, Activity> getContentEnrolled(){
         return this.enrolledContents;
     }
 
-    public Map<String,Content> getCompletedContent(){
+    public Map<String,Activity> getCompletedContent(){
         return this.completedContents;
     }
 
@@ -78,7 +78,7 @@ public class Dev {
 
     public Double getTotalXPAll(){
         double xp = 0;
-        for (Content content : getCompletedContent().values()){
+        for (Activity content : getCompletedContent().values()){
             xp += content.getXp();
         }
 
@@ -93,10 +93,10 @@ public class Dev {
 
     public void progress() {
     if (!this.enrolledContents.isEmpty()) {
-        Iterator<Map.Entry<String, Content>> iterator =
+        Iterator<Map.Entry<String, Activity>> iterator =
                 this.enrolledContents.entrySet().iterator();
 
-        Map.Entry<String, Content> entry = iterator.next();
+        Map.Entry<String, Activity> entry = iterator.next();
         this.completedContents.put(entry.getKey(), entry.getValue());
         iterator.remove();
     }
