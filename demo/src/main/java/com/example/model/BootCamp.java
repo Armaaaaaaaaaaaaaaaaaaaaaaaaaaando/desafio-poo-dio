@@ -55,6 +55,19 @@ public class BootCamp {
         return description;
     }
 
+    public HashMap<Integer, Dev> getListaAlunos() {
+        return listaAlunos;
+    }
+
+    public HashMap<String, Content> getListaConteudos() {
+        return listaConteudos;
+    }
+
+    public HashMap<String, Mentorship> getListaMentorias() {
+        return listaMentorias;
+    }
+    
+
     //operdores de inserção e remoção
     public void addContent(Content content) {
         listaConteudos.put(content.getTitle(), content);
